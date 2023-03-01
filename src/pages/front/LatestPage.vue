@@ -1,6 +1,9 @@
 <template>
   <!-- 最新消息頁 -->
   <div id="article">
+    <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]" style="z-index: 6000; position: fixed;">
+        <q-btn fab icon="keyboard_arrow_up" color="accent" size="sm"/>
+    </q-page-scroller>
     <!-- 路徑 -->
     <div class="route col-12 row items-center justify-start">
       <q-btn to="/" flat style="color: black" label="首頁" />

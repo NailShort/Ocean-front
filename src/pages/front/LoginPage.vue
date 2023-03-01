@@ -7,14 +7,18 @@
           <p>Ocean</p>
         </div>
 
-        <div class="right col-12 col-lg-6">
+        <div class="right col-12 col-lg-6"
+        data-aos="fade-up"
+        data-aos-delay="400"
+        data-aos-duration="1000">
           <div class="login ">
             <h1>登入</h1>
-            <q-form style="width:400px" @submit="login" ref="formEl" class="q-gutter-md">
+            <q-form style="max-width:400px" @submit="login" ref="formEl" class="q-gutter-md">
               <q-input filled v-model="form.account" label="帳號"  :rules="[rules.required, rules.length]"  />
               <q-input filled v-model="form.password" type="password" label="密碼"  :rules="[rules.required, rules.length]"  />
               <div class="btn">
                 <q-btn label="會員登入" type="submit" :loading="loading" color="primary"/>
+                <q-btn flat label="建立帳號" to="/register" color="primary"/>
               </div>
             </q-form>
             <div class="login01"></div>
@@ -30,6 +34,10 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { useUserStore } from '../../stores/user'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init()
 
 const user = useUserStore()
 
@@ -73,7 +81,7 @@ const login = async () => {
       position: relative;
       .login{
         margin: auto;
-        width: 600px;
+        max-width: 600px;
         height: 600px;
         background: url(../../../images/login.png) no-repeat center/cover;
         filter: drop-shadow(0 5px 10px rgba(20,45,85,0.5)) ;

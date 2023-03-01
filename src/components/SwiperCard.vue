@@ -148,4 +148,8 @@ body {
   object-fit: cover;
 }
 
+.swiper-pagination{
+  margin-top: 20px;
+}
+
 </style>

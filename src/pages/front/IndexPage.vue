@@ -1,7 +1,10 @@
 <template>
   <div id="index">
+    <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]" style="z-index: 6000; position: fixed;">
+        <q-btn fab icon="keyboard_arrow_up" color="accent" size="sm"/>
+    </q-page-scroller>
     <!-- top 按鈕 -->
-    <q-btn class="top-btn" icon="assistant_navigation" label="TOP"  stack glossy color="primary" to="/"/>
+    <!-- <q-btn class="top-btn" icon="assistant_navigation" label="TOP"  stack glossy color="primary" to="/"/> -->
     <!-- 輪播圖 ------------------------------------------------------------------->
     <div class="carousel">
       <q-carousel
@@ -23,10 +26,12 @@
     </q-carousel>
     <div class="sh"></div>
     <div class="wave"></div>
-    <div class="text">
+
+    <div class="carousel-text text">
       <h1>OCEAN</h1>
       <p>coral reef fish</p>
     </div>
+
     <div class="btn">
       <q-btn to="/article" style="background: white; color: rgb(15,85,165)" label="文章討論" />
       <q-btn to="/fish" outline style="color: white;" label="魚種圖鑑" />
@@ -35,13 +40,22 @@
 
     <!-- 熱門文章 -------------------------------------------------------------->
     <div class="card row items-center justify-center wrap">
-      <div class="text col-12">
+      <div class="bg01"></div>
+      <div class="bg02"></div>
+      <div class="bg03"></div>
+      <div class="bg04"></div>
+      <div class="text col-12"
+      data-aos="fade-up"
+      data-aos-duration="1000">
         <h3>熱門文章</h3>
         <span>Hot Articles</span>
       </div>
 
       <!-- 文章按鈕 -->
-        <div class="btn col-12 justify-center items-center">
+        <div class="btn col-12 justify-center items-center"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        >
           <q-btn class="col-12" v-for="fish,index in articleCategory" outline rounded color="primary" :key="index" :label="fish" @click="fishActive=fish" />
         </div>
 
@@ -69,7 +83,9 @@
       <!-- 內容 -->
       <div class="contant column items-center justify-center">
         <!-- 文字 -->
-        <div class="left col">
+        <div class="left col"
+        data-aos="fade-right"
+        data-aos-duration="1000">
           <p class="title">常見觀賞魚圖鑑</p>
           <p class="slogin">
             海水缸魚類新手入門指南<br>
@@ -82,7 +98,9 @@
           <q-btn class="btn" no-caps outline rounded color="white" label="View More" icon-right="double_arrow" />
         </div>
         <!-- 圖片 -->
-        <div class="right col-8 items-center justify-center">
+        <div class="right col-8 items-center justify-center"
+        data-aos="fade-left"
+        data-aos-duration="1000">
           <FishSwiper></FishSwiper>
         </div>
 
@@ -104,7 +122,10 @@
       </div>
       <div class="sponsor row warp justify-between">
 
-        <div class="box box01 col-12 col-sm-6 col-lg-3">
+        <div class="box box01 col-12 col-sm-6 col-lg-3"
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-duration="1000">
           <a href="https://www.ph84.idv.tw/forum/" target="_blank">
             <div class="img">
               <img src="../../../images/PH8.4.png" style="width: 100%; height: 100%;">
@@ -112,7 +133,10 @@
           </a>
         </div>
 
-        <div class="box box02 col-12 col-sm-6 col-lg-3">
+        <div class="box box02 col-12 col-sm-6 col-lg-3"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        data-aos-duration="1000">
           <a href="https://redseafish.com/" target="_blank">
             <div class="img">
               <img src="../../../images/RedSea.png" style="width: 100%; height: 100%;">
@@ -120,7 +144,10 @@
           </a>
         </div>
 
-        <div class="box box03 col-12 col-sm-6 col-lg-3">
+        <div class="box box03 col-12 col-sm-6 col-lg-3"
+        data-aos="fade-up"
+        data-aos-delay="300"
+        data-aos-duration="1000">
           <a href="https://www.cmfish.com/index.php" target="_blank">
             <div class="img">
               <img src="../../../images/海友網.png" style="width: 100%; height: 100%;">
@@ -128,7 +155,10 @@
           </a>
         </div>
 
-        <div class="box box04 col-12 col-sm-6 col-lg-3">
+        <div class="box box04 col-12 col-sm-6 col-lg-3"
+        data-aos="fade-up"
+        data-aos-delay="400"
+        data-aos-duration="1000">
           <a href="https://www.hikari-tw.com/" target="_blank">
             <div class="img">
               <img src="../../../images/高夠力.png" style="width: 100%; height: 100%;">
@@ -150,11 +180,65 @@ import FishSwiper from '../../components/FishSwiper.vue'
 import LatestsSwiper from '../../components/LatestsSwiper.vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init()
 
 gsap.registerPlugin(ScrollTrigger)
 // gsap ------------------------------------------------------
 onMounted(() => {
+  gsap.to('.carousel-text', {
+    scale: 1.1,
+    yoyo: true,
+    duration: 3,
+    opacity: 1
+  })
 
+  gsap.to('.bg01', {
+    scale: 1,
+    yoyo: true,
+    repeat: -1,
+    duration: 8
+  })
+
+  gsap.to('.bg02', {
+    y: -100,
+    opacity: 1,
+    repeat: -1,
+    duration: 5
+  })
+
+  gsap.to('.bg03', {
+    y: -100,
+    opacity: 1,
+    repeat: -1,
+    duration: 8
+  })
+
+  gsap.to('.bg04', {
+    scale: 1,
+    yoyo: true,
+    repeat: -1,
+    duration: 5
+  })
+
+  gsap.registerPlugin(ScrollTrigger)
+  window.addEventListener('mousemove', function (e) {
+    // console.log(e.pageX, e.pageY)
+    // console.log(e.pageX - window.innerWidth / 2)
+    gsap.to('.bg04', {
+      x: -(e.pageX - window.innerWidth / 2) / 200,
+      y: -(e.pageY - window.innerHeight / 2) / 200,
+      rotationX: -(e.pageX - window.innerWidth / 2) / 100,
+      rotationY: -(e.pageY - window.innerHeight / 2) / 100,
+      rotationZ: -(e.pageX - window.innerWidth / 2) / 500,
+      skewX: -(e.pageX - window.innerWidth / 2) / 500,
+      skewY: -(e.pageY - window.innerHeight / 2) / 500,
+      ease: 'back(5)',
+      duration: 3
+    })
+  })
 })
 // -----------------------------------------------------------
 
@@ -230,6 +314,7 @@ const fishActive = ref(articleCategory[0])
   }
 
   .text{
+    opacity: 0;
     position: absolute;
     top: 30%;
     left: 50%;
@@ -275,9 +360,35 @@ const fishActive = ref(articleCategory[0])
 // 熱門文章 --------------------------------------------------------------
 .card{
   width: 100%;
-  background: url(../../../images/文章bg-01.png)no-repeat center/cover;
   display: flex;
   position: relative;
+  .bg01{
+    width: 100vw;
+    height: 100%;
+    background: url(../../../images/文章-珊瑚bg.png)no-repeat center/cover;
+    position: absolute;
+  }
+  .bg02{
+    width: 100vw;
+    height: 100%;
+    background: url(../../../images/文章-氣泡bg01.png)no-repeat center/cover;
+    position: absolute;
+    opacity: 0;
+  }
+  .bg03{
+    width: 100vw;
+    height: 100%;
+    background: url(../../../images/文章-氣泡bg02.png)no-repeat center/cover;
+    position: absolute;
+    opacity: 0;
+  }
+  .bg04{
+    width: 100vw;
+    height: 100%;
+    background: url(../../../images/文章-生物bg.png)no-repeat center/cover;
+    position: absolute;
+
+  }
   .text{
     text-align: center;
     color:rgb(75,175,195);

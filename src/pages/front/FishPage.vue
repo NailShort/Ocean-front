@@ -1,6 +1,9 @@
 <template>
   <!-- 魚種圖鑑頁 -->
   <div id="fish">
+    <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]" style="z-index: 6000; position: fixed;">
+        <q-btn fab icon="keyboard_arrow_up" color="accent" size="sm"/>
+    </q-page-scroller>
     <div class="bg"></div>
     <div class="contant row wrap items-center justify-center">
       <div class="col-12">
