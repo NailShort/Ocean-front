@@ -28,7 +28,7 @@
       <q-card class="my-card col-12 row items-center justify-center">
         <q-form
           @submit="submit"
-          @reset="onreset"
+          @reset="onReset"
           class="q-gutter-md  col-12 "
         >
           <p class="aaa"><span style="color: red;">●</span> 我們收到您的意見後將於工作日由專人以郵件回覆您。</p>
@@ -136,6 +136,13 @@ const submit = async () => {
   }
 
   form.loading = false
+}
+
+const onReset = async () => {
+  form.name = null
+  form.age = null
+  form.email = null
+  form.description = null
 }
 
 </script>

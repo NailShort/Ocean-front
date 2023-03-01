@@ -3,8 +3,9 @@
     <div class="container">
       <div class="row items-center justify-center">
 
-        <div class="text col-12 col-lg-6">
-          <p>Ocean</p>
+        <div class="login-left col-12 col-lg-6">
+          <div class="img"><img src="../../../images/LOGO-white.png" alt=""></div>
+          <p>OCEAN</p>
         </div>
 
         <div class="right col-12 col-lg-6"
@@ -32,12 +33,35 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { useUserStore } from '../../stores/user'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 AOS.init()
+
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger)
+  window.addEventListener('mousemove', function (e) {
+    // console.log(e.pageX, e.pageY)
+    // console.log(e.pageX - window.innerWidth / 2)
+    gsap.to('.login-left', {
+      x: -(e.pageX - window.innerWidth / 2) / 200,
+      y: -(e.pageY - window.innerHeight / 2) / 200,
+      rotationX: -(e.pageX - window.innerWidth / 2) / 100,
+      rotationY: -(e.pageY - window.innerHeight / 2) / 100,
+      rotationZ: -(e.pageX - window.innerWidth / 2) / 500,
+      skewX: -(e.pageX - window.innerWidth / 2) / 500,
+      skewY: -(e.pageY - window.innerHeight / 2) / 500,
+      ease: 'back(5)',
+      duration: 3
+    })
+  })
+})
 
 const user = useUserStore()
 
@@ -140,16 +164,40 @@ const login = async () => {
         }
       }
     }
-    .text{
+    .login-left{
       // border: 1px solid white;
       font-size: 30px;
       color: white;
       text-align: center;
       margin-bottom: 50px;
+      font-weight: 900;
+      .img{
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        img{
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
     }
     .btn{
       padding-top: 20px;
       text-align: left;
+    }
+  }
+}
+
+@media (min-width:1440px) {
+  #login{
+    .container{
+      .login-left{
+        font-size: 70px;
+        .img{
+          width: 500px;
+          height: 500px;
+        }
+      }
     }
   }
 }

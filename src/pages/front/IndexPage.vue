@@ -362,32 +362,32 @@ const fishActive = ref(articleCategory[0])
   width: 100%;
   display: flex;
   position: relative;
+  overflow: hidden;
   .bg01{
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background: url(../../../images/文章-珊瑚bg.png)no-repeat center/cover;
     position: absolute;
   }
   .bg02{
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background: url(../../../images/文章-氣泡bg01.png)no-repeat center/cover;
     position: absolute;
     opacity: 0;
   }
   .bg03{
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background: url(../../../images/文章-氣泡bg02.png)no-repeat center/cover;
     position: absolute;
     opacity: 0;
   }
   .bg04{
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    height: 98%;
     background: url(../../../images/文章-生物bg.png)no-repeat center/cover;
     position: absolute;
-
   }
   .text{
     text-align: center;

@@ -7,9 +7,9 @@
         <q-toolbar-title>
           <a href="#">
             <q-avatar>
-              <img src="https://cdn-icons-png.flaticon.com/128/3313/3313341.png">
+              <img src="../../images/LOGO-white.png">
             </q-avatar>
-          <span>Ocean</span>
+          <span class="text">Ocean</span>
           </a>
         <!-- 登入按鈕 -->
         <div class="login">
@@ -119,8 +119,8 @@
       <div class="right col-12 col-sm-3 flex flex-center">
         <div class="line"></div>
         <div class="logo">
-          <img src="https://cdn-icons-png.flaticon.com/128/3313/3313341.png">
-          <span>Ocean</span>
+          <img src="../../images/LOGO-white.png">
+          <span class="text">Ocean</span>
         </div>
       </div>
 
@@ -165,6 +165,9 @@ const fab1 = ref(false)
   a{
     color: white;
     text-decoration: none;
+    .text{
+      font-weight: 900;
+    }
   }
   .login{
     width: 300px;
@@ -280,6 +283,9 @@ const fab1 = ref(false)
       img{
         width: 80px;
         height: 80px;
+      }
+      .text{
+        font-weight: 900;
       }
     }
   }
