@@ -1,0 +1,1 @@
+import{f as e,j as a}from"./index.8f6e2e29.js";const r=a.create({baseURL:"https://ocean-back.onrender.com"});var i=e(({app:o})=>{o.config.globalProperties.$axios=a,o.config.globalProperties.$api=r});export{r as api,i as default};
