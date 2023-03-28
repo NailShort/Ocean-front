@@ -75,13 +75,43 @@
               <q-btn to="/clownfish" align="left" flat style="color: rgb(15,85,165);" label="小丑魚" />
             </q-card-section>
             <q-card-section>
-              <q-btn to="" align="left" flat style="color: rgb(15,85,165);" label="雀鯛" />
+              <q-btn to="/damselfish" align="left" flat style="color: rgb(15,85,165);" label="雀鯛" />
             </q-card-section>
             <q-card-section>
-              <q-btn to="/tangfish" align="left" flat style="color: rgb(15,85,165);" label="倒吊" />
+              <q-btn to="/tangfish" align="left" flat style="color: rgb(15,85,165);" label="倒吊魚" />
             </q-card-section>
             <q-card-section>
-              <q-btn  align="left" flat style="color: rgb(15,85,165);" label="Fuchsia Flat" />
+              <q-btn to="/sangelfish" align="left" flat style="color: rgb(15,85,165);" label="小型神仙" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/angelfish" align="left" flat style="color: rgb(15,85,165);" label="大型神仙" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/butterflyfish" align="left" flat style="color: rgb(15,85,165);" label="蝶魚" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/triggerfish" align="left" flat style="color: rgb(15,85,165);" label=" 砲彈魚" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/boxfish" align="left" flat style="color: rgb(15,85,165);" label="箱魨" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/pufferfish" align="left" flat style="color: rgb(15,85,165);" label="魨魚" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/frogfish" align="left" flat style="color: rgb(15,85,165);" label="青蛙" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/wrassefish" align="left" flat style="color: rgb(15,85,165);" label="隆頭魚" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/pseudochromisfish" align="left" flat style="color: rgb(15,85,165);" label="草莓魚" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/anthiasfish" align="left" flat style="color: rgb(15,85,165);" label="海金魚" />
+            </q-card-section>
+            <q-card-section>
+              <q-btn to="/gobyfish" align="left" flat style="color: rgb(15,85,165);" label="蝦虎" />
             </q-card-section>
           </q-card>
         </q-expansion-item>
@@ -108,10 +138,10 @@
         </div>
         <div class="left-box col-12 col-sm-6">
           <ul class="row warp">
-            <li class="col-3 col-sm-12 col-md-6 col-lg-3 q-pb-md"><a href="">文章討論</a></li>
-            <li class="col-3 col-sm-12 col-md-6 col-lg-3 q-pb-md"><a href="">魚種圖鑑</a></li>
-            <li class="col-3 col-sm-12 col-md-6 col-lg-3 q-pb-md"><a href="">最新消息</a></li>
-            <li class="col-3 col-sm-12 col-md-6 col-lg-3 q-pb-md"><a href="">聯絡我們</a></li>
+            <li class="col-3 col-sm-12 col-md-6 col-lg-3 q-pb-md"><q-btn size="md" to="/article" label="文章討論"/></li>
+            <li class="col-3 col-sm-12 col-md-6 col-lg-3 q-pb-md"><q-btn size="md" to="/fish" label="魚種圖鑑"/></li>
+            <li class="col-3 col-sm-12 col-md-6 col-lg-3 q-pb-md"><q-btn size="md" to="/latest" label="最新消息"/></li>
+            <li class="col-3 col-sm-12 col-md-6 col-lg-3 q-pb-md"><q-btn size="md" to="/contact" label="聯絡我們"/></li>
           </ul>
         </div>
       </div>
@@ -245,11 +275,13 @@ const fab1 = ref(false)
       padding: 10px;
       ul{
         list-style: none;
+        padding: 0;
         a{
           display: block;
           text-decoration: none;
           font-size: 18px;
           color: white;
+          margin: 0 10px;
         }
       }
     }

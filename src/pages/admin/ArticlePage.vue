@@ -63,7 +63,7 @@
               <q-input
                 filled
                 v-model="form.time"
-                label="價格"
+                label="日期"
                 lazy-rules
                 :rules="[rules.required]"
               />
